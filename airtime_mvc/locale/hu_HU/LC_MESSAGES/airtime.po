@@ -1,24 +1,25 @@
 # LANGUAGE (xx_XX) translation for Airtime.
 # Copyright (C) 2012 Sourcefabric
 # This file is distributed under the same license as the Airtime package.
-#
+# 
 # Translators:
 # Zsolt Magyar <picizse@gmail.com>, 2014.
 # Sourcefabric <contact@sourcefabric.org>, 2012.
 # Zsolt Magyar <picizse@gmail.com>, 2015.
+# Lucas Bickel <hairmare@purplehaze.ch>, 2017. #zanata
 # miles <varota@gmail.com>, 2017.
 msgid ""
 msgstr ""
-"Project-Id-Version: Airtime\n"
+"Project-Id-Version: Airtime 2.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-24 16:23+0000\n"
 "PO-Revision-Date: 2017-12-10 12:41+0100\n"
 "Last-Translator: miles <varota@gmail.com>\n"
 "Language-Team: Hungarian <>\n"
-"Language: hu_HU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 2.0\n"
 
@@ -583,7 +584,8 @@ msgstr "Állomás alapértelmezések használata"
 
 #: airtime_mvc/application/common/UsabilityHints.php:66
 msgid "Upload some tracks below to add them to your library!"
-msgstr "A lenti mezőben feltöltve lehet sávokat hozzáadni a saját könyvtárhoz!"
+msgstr ""
+"A lenti mezőben feltöltve lehet sávokat hozzáadni a saját könyvtárhoz!"
 
 #: airtime_mvc/application/common/UsabilityHints.php:68
 #, php-format
@@ -600,15 +602,16 @@ msgstr "\tKattintson az „Új műsor” gombra és töltse ki a kötelező mez�
 #, php-format
 msgid ""
 "It looks like you don't have any shows scheduled. %sCreate a show now%s."
-msgstr "Úgy tűnik még nincsenek ütemezett műsorok. %sMűsor létrehozása most%s."
+msgstr ""
+"Úgy tűnik még nincsenek ütemezett műsorok. %sMűsor létrehozása most%s."
 
 #: airtime_mvc/application/common/UsabilityHints.php:84
 msgid ""
-"To start broadcasting, cancel the current linked show by clicking on it and"
-" selecting 'Cancel Show'."
+"To start broadcasting, cancel the current linked show by clicking on it and "
+"selecting 'Cancel Show'."
 msgstr ""
-"A közvetítés elkezdéséhez meg kell szakítani az aktuális hivatkozott műsort."
-" Kattintson a műsorra és válassza a „Műsor megszakítása” lehetőséget."
+"A közvetítés elkezdéséhez meg kell szakítani az aktuális hivatkozott műsort. "
+"Kattintson a műsorra és válassza a „Műsor megszakítása” lehetőséget."
 
 #: airtime_mvc/application/common/UsabilityHints.php:86
 #, php-format
@@ -1425,7 +1428,6 @@ msgid "Open Media Builder"
 msgstr "Médiaépítő megnyitása"
 
 #: airtime_mvc/application/controllers/LocaleController.php:128
-#, fuzzy
 msgid "please put in a time '00:00:00 (.0)'"
 msgstr "kérjük, tegye időbe '00:00:00 (.0)'"
 
@@ -2045,11 +2047,11 @@ msgstr "Törli a kiválasztott elemeket?"
 #: airtime_mvc/application/controllers/LocaleController.php:277
 #: airtime_mvc/application/views/scripts/schedule/show-content-dialog.phtml:5
 msgid "Start"
-msgstr "Kezdés"
+msgstr "Kezdése"
 
 #: airtime_mvc/application/controllers/LocaleController.php:278
 msgid "End"
-msgstr "Befejezés"
+msgstr "Vége"
 
 #: airtime_mvc/application/controllers/LocaleController.php:279
 msgid "Duration"
@@ -2152,12 +2154,10 @@ msgid "Cancel"
 msgstr "Mégse"
 
 #: airtime_mvc/application/controllers/LocaleController.php:304
-#, fuzzy
 msgid "Fade Editor"
 msgstr "Úsztatási Szerkesztő"
 
 #: airtime_mvc/application/controllers/LocaleController.php:305
-#, fuzzy
 msgid "Cue Editor"
 msgstr "Keverési Szerkesztő"
 
@@ -2428,7 +2428,6 @@ msgid "Uploaded %d/%d files"
 msgstr "Feltöltve %d/%d fájl"
 
 #: airtime_mvc/application/controllers/LocaleController.php:387
-#, fuzzy
 msgid "N/A"
 msgstr "N/A"
 
@@ -2445,7 +2444,6 @@ msgid "File size error."
 msgstr "Fájlméret hiba."
 
 #: airtime_mvc/application/controllers/LocaleController.php:391
-#, fuzzy
 msgid "File count error."
 msgstr "Fájl számi hiba."
 
@@ -2641,7 +2639,7 @@ msgid "Request method not accepted"
 msgstr "A kérés módja nem elfogadott"
 
 #: airtime_mvc/application/controllers/ScheduleController.php:380
-#, fuzzy, php-format
+#, php-format
 msgid "Rebroadcast of show %s from %s at %s"
 msgstr "A műsor újraközvetítése %s -tól/-től %s a %s"
 
@@ -2806,7 +2804,6 @@ msgid "Select Days:"
 msgstr "Napok kiválasztása:"
 
 #: airtime_mvc/application/forms/AddShowRepeats.php:47
-#, fuzzy
 msgid "Repeat By:"
 msgstr "Által Ismételt:"
 
@@ -2822,7 +2819,7 @@ msgstr "a hét napja"
 #: airtime_mvc/application/forms/DateRange.php:44
 #: airtime_mvc/application/forms/ShowBuilder.php:46
 msgid "Date End:"
-msgstr "Befejezés dátuma:"
+msgstr "Végzés Ideje:"
 
 #: airtime_mvc/application/forms/AddShowRepeats.php:69
 msgid "No End?"
@@ -3205,7 +3202,6 @@ msgid "Note: Anything larger than 600x600 will be resized."
 msgstr "Megjegyzés: Bármi ami nagyobb, mint 600x600 átméretezésre kerül."
 
 #: airtime_mvc/application/forms/GeneralPreferences.php:64
-#, fuzzy
 msgid "Default Crossfade Duration (s):"
 msgstr "Alapértelmezett Áttünési Időtartam (mp):"
 
@@ -3217,12 +3213,10 @@ msgid "Please enter a time in seconds (eg. 0.5)"
 msgstr "Idő megadása másodpercben (pl.: 0.5)"
 
 #: airtime_mvc/application/forms/GeneralPreferences.php:78
-#, fuzzy
 msgid "Default Fade In (s):"
 msgstr "Alapértelmezett Felúsztatás (mp)"
 
 #: airtime_mvc/application/forms/GeneralPreferences.php:92
-#, fuzzy
 msgid "Default Fade Out (s):"
 msgstr "Alapértelmezett Leúsztatás (mp)"
 
@@ -3498,7 +3492,7 @@ msgstr "Az állomásom közzététele itt: %s"
 
 #: airtime_mvc/application/forms/RegisterAirtime.php:151
 #: airtime_mvc/application/forms/SupportSettings.php:120
-#, fuzzy, php-format
+#, php-format
 msgid "By checking this box, I agree to %s's %sprivacy policy%s."
 msgstr "A mező bejelölésével, elfogadom a %s %sadatvédelmi irányelveit%s."
 
@@ -3678,7 +3672,6 @@ msgid "Value cannot be empty"
 msgstr "Az érték nem lehet üres"
 
 #: airtime_mvc/application/forms/SoundCloudPreferences.php:15
-#, fuzzy
 msgid "Default License:"
 msgstr "Alapértelmezett Liszensz:"
 
@@ -3687,37 +3680,30 @@ msgid "All rights are reserved"
 msgstr "Minden jog fenntartva"
 
 #: airtime_mvc/application/forms/SoundCloudPreferences.php:19
-#, fuzzy
 msgid "The work is in the public domain"
 msgstr "A munka a nyilvános felületen folyik"
 
 #: airtime_mvc/application/forms/SoundCloudPreferences.php:20
-#, fuzzy
 msgid "Creative Commons Attribution"
 msgstr "Creative Commons Tulajdonjog"
 
 #: airtime_mvc/application/forms/SoundCloudPreferences.php:21
-#, fuzzy
 msgid "Creative Commons Attribution Noncommercial"
 msgstr "Creative Commons Nem Kereskedelmi Tulajdonjog"
 
 #: airtime_mvc/application/forms/SoundCloudPreferences.php:22
-#, fuzzy
 msgid "Creative Commons Attribution No Derivative Works"
 msgstr "Creative Commons Nem Feldolgozható Tulajdonjog"
 
 #: airtime_mvc/application/forms/SoundCloudPreferences.php:23
-#, fuzzy
 msgid "Creative Commons Attribution Share Alike"
 msgstr "Creative Commons Eredményeket Megosztó Tulajdonjog"
 
 #: airtime_mvc/application/forms/SoundCloudPreferences.php:24
-#, fuzzy
 msgid "Creative Commons Attribution Noncommercial Non Derivate Works"
 msgstr "Creative Commons Nem Kereskedelmi Nem Feldolgozható Tulajdonjog"
 
 #: airtime_mvc/application/forms/SoundCloudPreferences.php:25
-#, fuzzy
 msgid "Creative Commons Attribution Noncommercial Share Alike"
 msgstr "Creative Commons Nem Kereskedelmi Megosztó Tulajdonjog"
 
@@ -3782,12 +3768,10 @@ msgid "Off Air Metadata"
 msgstr "Adásszünet - Metaadat"
 
 #: airtime_mvc/application/forms/StreamSetting.php:71
-#, fuzzy
 msgid "Enable Replay Gain"
 msgstr "Replay Gain Engedélyezése"
 
 #: airtime_mvc/application/forms/StreamSetting.php:77
-#, fuzzy
 msgid "Replay Gain Modifier"
 msgstr "Replay Gain Módosító"
 
@@ -3948,12 +3932,10 @@ msgid "Stop"
 msgstr "Leállítás"
 
 #: airtime_mvc/application/layouts/scripts/layout.phtml:150
-#, fuzzy
 msgid "Set Cue In"
 msgstr "Felkeverés Beállítása"
 
 #: airtime_mvc/application/layouts/scripts/layout.phtml:157
-#, fuzzy
 msgid "Set Cue Out"
 msgstr "Lekeverés Beállítása"
 
@@ -4014,8 +3996,7 @@ msgstr ""
 
 #: airtime_mvc/application/models/Auth.php:33
 #, php-format
-msgid ""
-"Hi %s, \n"
+msgid "Hi %s, \n"
 "\n"
 "Please click this link to reset your password: "
 msgstr ""
@@ -4025,8 +4006,7 @@ msgstr ""
 
 #: airtime_mvc/application/models/Auth.php:35
 #, php-format
-msgid ""
-"\n"
+msgid "\n"
 "\n"
 "If you have any problems, please contact our support team: %s"
 msgstr ""
@@ -4036,8 +4016,7 @@ msgstr ""
 
 #: airtime_mvc/application/models/Auth.php:36
 #, php-format
-msgid ""
-"\n"
+msgid "\n"
 "\n"
 "Thank you,\n"
 "The %s Team"
@@ -4054,7 +4033,6 @@ msgstr "%s jelszó visszaállítása"
 
 #: airtime_mvc/application/models/Block.php:830
 #: airtime_mvc/application/models/Playlist.php:810
-#, fuzzy
 msgid "Cue in and cue out are null."
 msgstr "A fel- és a lekeverés értékei nullák."
 
@@ -4062,7 +4040,6 @@ msgstr "A fel- és a lekeverés értékei nullák."
 #: airtime_mvc/application/models/Block.php:921
 #: airtime_mvc/application/models/Playlist.php:849
 #: airtime_mvc/application/models/Playlist.php:893
-#, fuzzy
 msgid "Can't set cue out to be greater than file length."
 msgstr ""
 "Nem lehet beállítani, mert a lekeverési idő nem lehet nagyobb a fájl"
@@ -4072,14 +4049,12 @@ msgstr ""
 #: airtime_mvc/application/models/Block.php:897
 #: airtime_mvc/application/models/Playlist.php:841
 #: airtime_mvc/application/models/Playlist.php:866
-#, fuzzy
 msgid "Can't set cue in to be larger than cue out."
 msgstr ""
 "Nem lehet beállítani, hogy a felkeverés hosszabb legyen, mint a lekeverés."
 
 #: airtime_mvc/application/models/Block.php:932
 #: airtime_mvc/application/models/Playlist.php:885
-#, fuzzy
 msgid "Can't set cue out to be smaller than cue in."
 msgstr "Nem lehet a lekeverés rövidebb, mint a felkeverés."
 
@@ -4209,11 +4184,11 @@ msgid ""
 "Cannot schedule overlapping shows.\n"
 "Note: Resizing a repeating show affects all of its repeats."
 msgstr ""
-"Átfedő műsorokat nem lehet ütemezni.\n"
-"Megjegyzés: Egy ismétlődő műsor átméretezése hatással lesz minden ismétlésére."
+"Az ütemzés nem fedheti át a műsorokat.\n"
+"Megjegyzés: Az ismételt műsorok átméretezése kavarodást okozhat."
 
 #: airtime_mvc/application/models/ShowBuilder.php:209
-#, fuzzy, php-format
+#, php-format
 msgid "Rebroadcast of %s from %s"
 msgstr "Úrjaközvetítés %s -tól/-től %s"
 
@@ -4222,7 +4197,6 @@ msgid "Length needs to be greater than 0 minutes"
 msgstr "A hosszúság értékének nagyobb kell lennie, mint 0 perc"
 
 #: airtime_mvc/application/models/Webstream.php:171
-#, fuzzy
 msgid "Length should be of form \"00h 00m\""
 msgstr "A hosszúság formája \"00ó 00p\""
 
@@ -4410,13 +4384,13 @@ msgstr ""
 " menedzsment."
 
 #: airtime_mvc/application/views/scripts/dashboard/about.phtml:22
-#, fuzzy, php-format
+#, php-format
 msgid "%1$s %2$s is distributed under the %3$s"
 msgstr "%1$s %2$s-ot %3$s mellett terjesztik"
 
 #: airtime_mvc/application/views/scripts/dashboard/help.phtml:2
 #: airtime_mvc/application/views/scripts/form/setup-lang-timezone.phtml:1
-#, fuzzy, php-format
+#, php-format
 msgid "Welcome to %s!"
 msgstr "Üdvözöljük az %s-nál!"
 
@@ -4586,7 +4560,6 @@ msgid "Choose Show Instance"
 msgstr "Műsorpéldány kiválasztása"
 
 #: airtime_mvc/application/views/scripts/form/edit-history-item.phtml:56
-#, fuzzy
 msgid "Find"
 msgstr "Találat"
 
@@ -4708,7 +4681,7 @@ msgstr ""
 
 #: airtime_mvc/application/views/scripts/form/register-dialog.phtml:29
 #: airtime_mvc/application/views/scripts/form/support-setting.phtml:29
-#, fuzzy, php-format
+#, php-format
 msgid "Click the box below to promote your station on %s."
 msgstr "Jelöld be a mezőt az állomásod közzétételéhez a %s-on."
 
@@ -5022,7 +4995,6 @@ msgstr "Véletlenszerű lejátszási lista"
 
 #: airtime_mvc/application/views/scripts/playlist/playlist.phtml:48
 #: airtime_mvc/application/views/scripts/playlist/smart-block.phtml:56
-#, fuzzy
 msgid "Playlist crossfade"
 msgstr "Lejátszási lista átúsztatása"
 
@@ -5043,9 +5015,8 @@ msgstr "Felkeverés:"
 #: airtime_mvc/application/views/scripts/playlist/playlist.phtml:63
 #: airtime_mvc/application/views/scripts/playlist/set-fade.phtml:6
 #: airtime_mvc/application/views/scripts/playlist/smart-block.phtml:72
-#, fuzzy
 msgid "Fade out: "
-msgstr "Lekeverés:"
+msgstr "Leúsztatás:"
 
 #: airtime_mvc/application/views/scripts/playlist/playlist.phtml:78
 msgid "Save playlist"
@@ -5061,7 +5032,6 @@ msgid "Show Waveform"
 msgstr "Hullámforma mutatása"
 
 #: airtime_mvc/application/views/scripts/playlist/set-cue.phtml:5
-#, fuzzy
 msgid "Cue In: "
 msgstr "Felkeverés:"
 
@@ -5071,7 +5041,6 @@ msgid "(hh:mm:ss.t)"
 msgstr "(óó:pp:mm.t)"
 
 #: airtime_mvc/application/views/scripts/playlist/set-cue.phtml:12
-#, fuzzy
 msgid "Cue Out: "
 msgstr "Lekeverés:"
 
@@ -5086,7 +5055,6 @@ msgstr "(mm.t)"
 
 #: airtime_mvc/application/views/scripts/playlist/set-fade.phtml:19
 #: airtime_mvc/application/views/scripts/playlist/smart-block.phtml:68
-#, fuzzy
 msgid "Fade in: "
 msgstr "Felúsztatás:"
 

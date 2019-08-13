@@ -14,5 +14,6 @@ composer.phar
 VERSION
 airtime_mvc/tests/log/*.log
 .vagrant/
+.zanata-cache/
 .DS_Store
 .idea/
