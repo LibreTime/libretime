@@ -624,6 +624,7 @@ fi
 is_debian_dist=false
 is_debian_buster=false
 is_ubuntu_dist=false
+is_ubuntu_focal=false
 is_ubuntu_bionic=false
 is_ubuntu_xenial=false
 is_centos_dist=false
@@ -635,6 +636,11 @@ code="${code:-$VERSION_ID}"
 code="${code,,}"
 verbose "Validating dist-code: ${dist}-${code}"
 case "${dist}-${code}" in
+    ubuntu-20.04)
+        code="focal"
+        is_ubuntu_dist=true
+        is_ubuntu_focal=true
+        ;;
     ubuntu-18.04)
         code="bionic"
         is_ubuntu_dist=true
@@ -743,10 +749,24 @@ if [ "$ignore_dependencies" = "f" ]; then
         if [ "$in_place" = "t" ]; then
             loudCmd "DEBIAN_FRONTEND=noninteractive apt-get -y -m install git"
         fi
+
+        # Ubuntu 20.04 Focal Fossa is missing some dependencies
+        # https://github.com/LibreTime/libretime/issues/1109
+        if [[ "$is_ubuntu_focal" -eq "true" ]]; then
+            echo
+            echo "ERROR: This distribution probably does not package Liquidsoap."
+            echo "Please eventually install Liquidsoap following their upstream documentation:"
+            echo " https://libretime.org/install"
+            echo "When you are done, press ENTER to continue."
+            echo "Press CTRL+C to abort."
+            read
+        fi
+
     else
         echo "WARNING: installing dependencies is not supported for this distribution" >&2
     fi
     set -e
+
 else
     checkCommandExists "${apache_bin}"
     checkCommandExists "rabbitmqctl"
@@ -1048,6 +1068,7 @@ loud "              * Configuring PHP in Apache *          "
 loud "-----------------------------------------------------"
 # Test common locations for php conf directory
 php_conf_dirs=(
+    "/etc/php/7.4/apache2/conf.d"   # Ubuntu Focal
     "/etc/php/7.3/apache2/conf.d"   # Debian Buster
     "/etc/php/7.2/apache2/conf.d"   # Ubuntu Bionic
     "/etc/php/7.0/apache2/conf.d"   # Ubuntu Xenial
@@ -1072,12 +1093,12 @@ else
 fi
 
 # Enable Apache modules
-if $is_debian_buster; then
+if $is_ubuntu_focal; then
+    loudCmd "a2enmod rewrite php7.4 proxy proxy_http"
+elif $is_debian_buster; then
     loudCmd "a2enmod rewrite php7.3 proxy proxy_http"
 elif $is_ubuntu_bionic; then
     loudCmd "a2enmod rewrite php7.2 proxy proxy_http"
-elif $is_ubuntu_xenial; then
-    loudCmd "a2enmod rewrite php7.0 proxy proxy_http"
 elif $is_centos_dist; then
     verbose "TODO: enable Apache modules mod_rewrite, mod_php, mod_proxy and mod_proxy_http manually"
 else
