@@ -723,6 +723,12 @@ if [ "$ignore_dependencies" = "f" ]; then
     	loudCmd "add-apt-repository -y ppa:libretime/libretime"
     	fi
 
+    if [ "$is_ubuntu_focal" = "t" -a ! -x /usr/bin/php7.3 ]; then
+        echo -e "ERROR: Ubuntu Focal is not currently supported out of the box. It ships PHP 7.4, which is incompatible with LibreTime." >&2
+        echo -e "You need to install PHP 7.3 and run this script again" >&2
+        echo -e "Install PHP 7.3 from https://launchpad.net/%7Eondrej/+archive/ubuntu/php/+index?batch=75&memo=150&start=150." >&2
+        exit 1
+    fi
     if [ -x /usr/bin/apt-get ]; then
         verbose "\n * Reading requirements-${dist}-${code}.apt..."
         loudCmd "apt-get -q update"
@@ -749,19 +755,6 @@ if [ "$ignore_dependencies" = "f" ]; then
         if [ "$in_place" = "t" ]; then
             loudCmd "DEBIAN_FRONTEND=noninteractive apt-get -y -m install git"
         fi
-
-        # Ubuntu 20.04 Focal Fossa is missing some dependencies
-        # https://github.com/LibreTime/libretime/issues/1109
-        if [[ "$is_ubuntu_focal" -eq "true" ]]; then
-            echo
-            echo "ERROR: This distribution probably does not package Liquidsoap."
-            echo "Please eventually install Liquidsoap following their upstream documentation:"
-            echo " https://libretime.org/install"
-            echo "When you are done, press ENTER to continue."
-            echo "Press CTRL+C to abort."
-            read
-        fi
-
     else
         echo "WARNING: installing dependencies is not supported for this distribution" >&2
     fi
