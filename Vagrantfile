@@ -52,7 +52,6 @@ Vagrant.configure("2") do |config|
     os.vm.box = "bento/ubuntu-16.04"
     provision_libretime(os, "debian.sh", installer_args)
   end
-  # TODO: Fix the script to install PHP 7.3 from Ondrej PPA
   config.vm.define "ubuntu-focal" do |os|
     os.vm.box = "bento/ubuntu-20.04"
     provision_libretime(os, "debian.sh", installer_args)

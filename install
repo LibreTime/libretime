@@ -720,12 +720,12 @@ if [ "$ignore_dependencies" = "f" ]; then
     loud "-----------------------------------------------------"
 
     if $is_ubuntu_dist; then
-    	loudCmd "add-apt-repository -y ppa:libretime/libretime"
+        loudCmd "add-apt-repository -y ppa:libretime/libretime"
     fi
 
-    if [ "$is_ubuntu_focal" = "t" -a ! -x /usr/bin/php7.3 ]; then
+    if [ "$is_ubuntu_focal" = "true" -a ! -x /usr/bin/php7.3 ]; then
         loud "Adding PHP PPA for PHP 7.3"
-    	loudCmd "add-apt-repository -y ppa:ppa:ondre/php"
+        loudCmd "add-apt-repository -y ppa:ondrej/php"
     fi
     if [ -x /usr/bin/apt-get ]; then
         verbose "\n * Reading requirements-${dist}-${code}.apt..."
@@ -757,7 +757,6 @@ if [ "$ignore_dependencies" = "f" ]; then
         echo "WARNING: installing dependencies is not supported for this distribution" >&2
     fi
     set -e
-
 else
     checkCommandExists "${apache_bin}"
     checkCommandExists "rabbitmqctl"
@@ -955,7 +954,7 @@ if [ "$icecast" = "t" ]; then
         icecast_config="/etc/icecast2/icecast.xml"
     else
         icecast_unit_name="icecast"
-	icecast_config="/etc/icecast.xml"
+    icecast_config="/etc/icecast.xml"
     fi
     systemInitCommand enable ${icecast_unit_name}
     # only update icecast password if
@@ -1059,8 +1058,7 @@ loud "              * Configuring PHP in Apache *          "
 loud "-----------------------------------------------------"
 # Test common locations for php conf directory
 php_conf_dirs=(
-    "/etc/php/7.4/apache2/conf.d"   # Ubuntu Focal
-    "/etc/php/7.3/apache2/conf.d"   # Debian Buster
+    "/etc/php/7.3/apache2/conf.d"   # Debian Buster, Ubuntu Focal
     "/etc/php/7.2/apache2/conf.d"   # Ubuntu Bionic
     "/etc/php/7.0/apache2/conf.d"   # Ubuntu Xenial
     "/etc/php5/apache2/conf.d"      # Debian Stretch, Debian Jessie, Ubuntu Trusty
@@ -1084,12 +1082,12 @@ else
 fi
 
 # Enable Apache modules
-if $is_ubuntu_focal; then
-    loudCmd "a2enmod rewrite php7.4 proxy proxy_http"
-elif $is_debian_buster; then
+elif $is_debian_buster || $is_ubuntu_focal; then
     loudCmd "a2enmod rewrite php7.3 proxy proxy_http"
 elif $is_ubuntu_bionic; then
     loudCmd "a2enmod rewrite php7.2 proxy proxy_http"
+elif $is_ubuntu_xenial; then
+    loudCmd "a2enmod rewrite php7.0 proxy proxy_http"
 elif $is_centos_dist; then
     verbose "TODO: enable Apache modules mod_rewrite, mod_php, mod_proxy and mod_proxy_http manually"
 else
