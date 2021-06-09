@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "::group::Install Python apps"
-for app in airtime_analyzer api_clients; do
+for app in analyzer api_clients; do
   if [[ -f "$app/requirements-dev.txt" ]]; then
     pip3 install -r "$app/requirements-dev.txt"
   fi

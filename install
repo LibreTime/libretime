@@ -188,7 +188,7 @@ function systemInitInstall() {
     if $has_systemd_init; then
         case "$service_name" in
             libretime-analyzer)
-                source_path="${python_source_path}/airtime_analyzer/install/systemd/${service_name}.service"
+                source_path="${python_source_path}/analyzer/install/systemd/${service_name}.service"
                 target_path="/etc/systemd/system/${service_name}.service"
                 alt_path=$(echo $target_path | sed 's/libretime-/airtime_/')
                 ;;
@@ -249,7 +249,7 @@ function systemInitInstall() {
     elif $has_upstart_init; then
         case "$service_name" in
             libretime-analyzer)
-                source_path="${python_source_path}/airtime_analyzer/install/upstart/${service_name}.conf"
+                source_path="${python_source_path}/analyzer/install/upstart/${service_name}.conf"
                 target_path="/etc/init/${service_name}.conf"
                 user=${user:-$web_user}
                 ;;
@@ -287,7 +287,7 @@ function systemInitInstall() {
     elif $has_systemv_init; then
         case "$service_name" in
             libretime-analyzer)
-                source_path="${python_source_path}/airtime_analyzer/install/sysvinit/${service_name}"
+                source_path="${python_source_path}/analyzer/install/sysvinit/${service_name}"
                 target_path="/etc/init.d/${service_name}"
                 user=${user:-$web_user}
                 ;;
@@ -1027,7 +1027,7 @@ systemInitInstall libretime-celery
 verbose "...Done"
 
 verbose "\n * Installing libretime-analyzer..."
-loudCmd "$python_bin ${AIRTIMEROOT}/airtime_analyzer/setup.py install --install-scripts=/usr/bin"
+loudCmd "$python_bin ${AIRTIMEROOT}/analyzer/setup.py install --install-scripts=/usr/bin"
 systemInitInstall libretime-analyzer $web_user
 verbose "...Done"
 

@@ -3,7 +3,7 @@
 failed="false"
 
 echo "::group::Airtime Analyzer"
-if ! make -C airtime_analyzer test; then
+if ! make -C analyzer test; then
   failed="true"
 fi
 echo "::endgroup::"
