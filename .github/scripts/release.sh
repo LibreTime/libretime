@@ -30,7 +30,9 @@ echo -n "${suffix}" > ./VERSION
 echo " Done"
 
 echo -n "Running composer install..."
+pushd airtime_mvc
 composer install --quiet --no-dev --ignore-platform-reqs
+popd
 echo " Done"
 
 # Adding back; may be useful later...

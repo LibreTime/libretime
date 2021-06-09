@@ -49,7 +49,9 @@ git checkout --quiet tags/${suffix}
 echo " Done"
 
 echo -n "Running composer install..."
+pushd airtime_mvc
 composer install --quiet --no-dev --ignore-platform-reqs
+popd
 echo " Done"
 
 popd
@@ -77,6 +79,5 @@ tar -czf $target_file \
     libretime-${suffix}
 echo " Done"
 popd
-
 
 echo "Output file available at $target_file"
