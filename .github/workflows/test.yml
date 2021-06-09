@@ -56,7 +56,7 @@ jobs:
       - name: Run PHP tests
         run: |
           cd airtime_mvc
-          composer install --no-progress --dev
+          composer install --no-progress
           pushd tests
           php ../vendor/bin/phpunit
           popd
@@ -84,7 +84,7 @@ jobs:
       - name: Run PHP tests
         run: |
           cd airtime_mvc
-          composer install --no-progress --dev
+          composer install --no-progress
           pushd tests
           php ../vendor/bin/phpunit
           popd
