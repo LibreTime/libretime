@@ -27,14 +27,14 @@ Developers
 
 To debug, you can run celery directly from the command line:
 
-    $ cd /my/airtime/root/python_apps/airtime-celery
+    $ cd /my/airtime/root/airtime-celery
     $ RMQ_CONFIG_FILE=${LIBRETIME_CONF_DIR}/airtime.conf celery -A airtime-celery.tasks worker --loglevel=info
 
 This worker can be run alongside the service without issue.
 
 You may want to use the setuptools develop target to install:
 
-    $ cd /my/airtime/root/python_apps/airtime-celery
+    $ cd /my/airtime/root/airtime-celery
     $ sudo python setup.py develop
 
 You will need to allow the "airtime" RabbitMQ user to access all exchanges and queues within the /airtime vhost:

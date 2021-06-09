@@ -3,13 +3,13 @@
 failed="false"
 
 echo "::group::Airtime Analyzer"
-if ! make -C python_apps/airtime_analyzer test; then
+if ! make -C airtime_analyzer test; then
   failed="true"
 fi
 echo "::endgroup::"
 
 echo "::group::API Client"
-if ! make -C python_apps/api_clients test; then
+if ! make -C api_clients test; then
   failed="true"
 fi
 echo "::endgroup::"
