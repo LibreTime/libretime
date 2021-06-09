@@ -1,5 +1,7 @@
 #!/bin/bash -e
+pushd airtime_mvc
 composer install --no-dev
+popd
 
 git_build=""
 if [ -d .git ]; then

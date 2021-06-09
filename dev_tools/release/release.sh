@@ -49,7 +49,9 @@ git checkout --quiet tags/${suffix}
 echo " Done"
 
 echo -n "Running composer install..."
+pushd airtime_mvc
 composer install --quiet --no-dev --ignore-platform-reqs
+popd
 echo " Done"
 
 popd
@@ -72,11 +74,10 @@ tar -czf $target_file \
         --exclude .travis.yml \
         --exclude travis \
         --exclude dev_tools \
-        --exclude vendor/phing \
-        --exclude vendor/simplepie/simplepie/tests \
+        --exclude airtime_mvc/vendor/phing \
+        --exclude airtime_mvc/vendor/simplepie/simplepie/tests \
     libretime-${suffix}
 echo " Done"
 popd
-
 
 echo "Output file available at $target_file"
