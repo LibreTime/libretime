@@ -2,8 +2,10 @@ name: Tests PHP
 
 on:
   push:
+    branches: [master]
     paths-ignore: ["docs/**"]
   pull_request:
+    branches: [master]
     types: [opened, reopened, synchronize, edited]
     paths-ignore: ["docs/**"]
   workflow_dispatch:
