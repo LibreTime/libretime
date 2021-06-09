@@ -55,9 +55,11 @@ jobs:
           ./.github/scripts/python-pkg-test.sh
       - name: Run PHP tests
         run: |
+          cd airtime_mvc
           composer install --no-progress --dev
-          cd airtime_mvc/tests
-          php ../../vendor/bin/phpunit
+          pushd tests
+          php ../vendor/bin/phpunit
+          popd
   test-xenial-php:
     runs-on: ubuntu-16.04
     env:
@@ -81,8 +83,8 @@ jobs:
         run: sudo -E ./.github/scripts/install-xenial.sh
       - name: Run PHP tests
         run: |
-          echo "::group::Install PHP dependencies"
+          cd airtime_mvc
           composer install --no-progress --dev
-          echo "::endgroup::"
-          cd airtime_mvc/tests
-          php ../../vendor/bin/phpunit
+          pushd tests
+          php ../vendor/bin/phpunit
+          popd

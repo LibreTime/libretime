@@ -52,7 +52,7 @@ tar -czf libretime-${suffix}.tar.gz \
         --exclude .travis.yml \
         --exclude travis \
         --exclude dev_tools \
-        --exclude vendor/phing \
-        --exclude vendor/simplepie/simplepie/tests \
+        --exclude airtime_mvc/vendor/phing \
+        --exclude airtime_mvc/vendor/simplepie/simplepie/tests \
     libretime
 echo " Done"
