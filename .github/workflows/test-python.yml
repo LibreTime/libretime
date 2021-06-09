@@ -29,7 +29,8 @@ jobs:
       #       and only install for analyzer
       - name: Install dependencies
         run: |
-          if [[ "${{ matrix.runs-on }}" ==  "ubuntu-18.04" ]]; then
+          if [[ "${{ matrix.runs-on }}" ==  "ubuntu-16.04" \
+             || "${{ matrix.runs-on }}" ==  "ubuntu-18.04"  ]]; then
             sudo add-apt-repository -y ppa:libretime/libretime
           fi
           sudo apt-get -q update
