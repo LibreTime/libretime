@@ -8,7 +8,12 @@ def run_command(command: List[str], check=True):
         return run(
             command,
             check=check,
-            capture_output=True,
+            # TODO: Replace std* with capture_output after dropping <python3.7
+            # capture_output=True,
+            stdout=PIPE,
+            stderr=PIPE,
+            # TODO: Replace universal_newlines with text after dropping <python3.7
+            # text=True,
             universal_newlines=True,
         )
 
