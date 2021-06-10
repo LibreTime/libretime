@@ -28,11 +28,11 @@ def test_analyze(filepath):
     assert abs(metadata["replay_gain"] - expected_replaygain) < tolerance
 
 
-def test_analyze_missing_replaygain():
-    old = ReplayGainAnalyzer.REPLAYGAIN_EXECUTABLE
-    ReplayGainAnalyzer.REPLAYGAIN_EXECUTABLE = "foobar"
+def test_analyze_missing_ffmpeg():
+    old = ReplayGainAnalyzer.FFMPEG_EXECUTABLE
+    ReplayGainAnalyzer.FFMPEG_EXECUTABLE = "foobar"
     ReplayGainAnalyzer.analyze("tests/test_data/44100Hz-16bit-mono.mp3", dict())
-    ReplayGainAnalyzer.REPLAYGAIN_EXECUTABLE = old
+    ReplayGainAnalyzer.FFMPEG_EXECUTABLE = old
 
 
 def test_analyze_invalid_filepath():

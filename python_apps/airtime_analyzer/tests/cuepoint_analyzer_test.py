@@ -22,7 +22,6 @@ from airtime_analyzer.cuepoint_analyzer import CuePointAnalyzer
 def test_analyze(filepath):
     metadata = CuePointAnalyzer.analyze(filepath, dict())
 
-    # We give silan some leeway here by specifying a tolerance
     tolerance_seconds = 0.1
     length_seconds = 3.9
     assert abs(metadata["length_seconds"] - length_seconds) < tolerance_seconds
@@ -31,10 +30,10 @@ def test_analyze(filepath):
 
 
 def test_analyze_missing_silan():
-    old = CuePointAnalyzer.SILAN_EXECUTABLE
-    CuePointAnalyzer.SILAN_EXECUTABLE = "foobar"
+    old = CuePointAnalyzer.FFMPEG_EXECUTABLE
+    CuePointAnalyzer.FFMPEG_EXECUTABLE = "foobar"
     CuePointAnalyzer.analyze("tests/test_data/44100Hz-16bit-mono.mp3", dict())
-    CuePointAnalyzer.SILAN_EXECUTABLE = old
+    CuePointAnalyzer.FFMPEG_EXECUTABLE = old
 
 
 def test_analyze_invalid_filepath():
