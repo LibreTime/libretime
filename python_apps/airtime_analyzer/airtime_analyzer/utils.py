@@ -1,5 +1,5 @@
 import logging
-from subprocess import CalledProcessError, run
+from subprocess import PIPE, CalledProcessError, run
 from typing import List
 
 
