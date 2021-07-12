@@ -25,6 +25,39 @@ jobs:
       - uses: actions/setup-python@v2
       - uses: pre-commit/action@v2.0.3
 
+  test-focal:
+    runs-on: ubuntu-20.04
+    env:
+      ENVIRONMENT: testing
+      LIBRETIME_LOG_DIR: /tmp/log/libretime
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+      - name: Setup PostgreSQL
+        run: |
+          sudo systemctl start postgresql.service
+          pg_isready
+          sudo -u postgres psql -c 'CREATE DATABASE libretime;'
+          sudo -u postgres psql -c "CREATE USER libretime WITH PASSWORD 'libretime';"
+          sudo -u postgres psql -c 'GRANT CONNECT ON DATABASE libretime TO libretime;'
+          sudo -u postgres psql -c 'ALTER USER libretime CREATEDB;'
+      - name: Setup PHP with specific version
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "7.3"
+      - name: Install prerequisites
+        run: sudo -E ./.github/scripts/install-focal.sh
+      - name: Run Python tests
+        run: |
+          sudo ./.github/scripts/python-pkg-install.sh
+          ./.github/scripts/python-pkg-test.sh
+      - name: Run PHP tests
+        run: |
+          composer install --no-progress --dev
+          cd airtime_mvc/tests
+          php ../../vendor/bin/phpunit
   test-bionic:
     runs-on: ubuntu-18.04
     env:
